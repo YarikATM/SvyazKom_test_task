@@ -12,8 +12,7 @@ async def client(expression):
         logging.info("Подключился к серверу")
 
         # Отправка запроса
-        request = expression
-        writer.write(json.dumps(request).encode())
+        writer.write(json.dumps(expression).encode())
         await writer.drain()
         logging.info(f"Отправил сообщение: {expression}")
 
